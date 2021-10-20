@@ -1,2 +1,2 @@
-Sphinx==4.2.0
+git+https://github.com/sphinx-doc/sphinx.git@6472fb92244f2c8384e0a1b299109398e0e10a52#egg=Sphinx
 sphinx_rtd_theme==1.0.0
