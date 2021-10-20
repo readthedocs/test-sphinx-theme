@@ -9,10 +9,11 @@ commands:
   sync_html:
     description: "Sync HTML to S3"
     steps:
-      - run: echo "Test"
+      - run: find /tmp/html
   run_happo:
     description: "Run Happo"
     steps:
+      - run: find /tmp/html
       - run: npm ci
       - run: npm run happo-ci-circleci
 
@@ -29,6 +30,7 @@ jobs:
     docker:
       - image: 'cimg/node:lts'
     steps:
+      - checkout
       - run_happo
 
 workflows:
