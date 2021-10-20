@@ -1,0 +1,42 @@
+version: 2.1
+
+commands:
+  build_html:
+    description: "Build HTML"
+    steps:
+      - run: pip install --user -f requirements.txt
+      - run: sphinx-build -t html docs/ /tmp/html
+  sync_html:
+    description: "Sync HTML to S3"
+    steps:
+      - run: echo "Test"
+  run_happo:
+    description: "Run Happo"
+    steps:
+      - npm install --no-save happo
+      - npm install --no-save happo-ci-circleci
+      - npm run happo-ci-circleci
+
+jobs:
+  build:
+    description: "Build"
+    docker:
+      - image: 'cimg/python:3.9'
+    steps:
+      - checkout
+      - build_html
+      - sync_html
+  happo:
+    docker:
+      - image: 'cimg/node'
+    steps:
+      - run_happo
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - build
+      - happo:
+          requires:
+            - build
