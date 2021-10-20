@@ -13,8 +13,7 @@ commands:
   run_happo:
     description: "Run Happo"
     steps:
-      - run: npm install --no-save happo
-      - run: npm install --no-save happo-ci-circleci
+      - run: npm ci
       - run: npm run happo-ci-circleci
 
 jobs:

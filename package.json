@@ -1,0 +1,27 @@
+{
+  "name": "test-sphinx-theme",
+  "version": "1.0.0",
+  "description": "Test sphinx_rtd_theme",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "happo": "happo",
+    "happo-ci-circleci": "happo-ci-circleci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/readthedocs/test-sphinx-theme.git"
+  },
+  "author": "Read the Docs, Inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/readthedocs/test-sphinx-theme/issues"
+  },
+  "homepage": "https://github.com/readthedocs/test-sphinx-theme#readme",
+  "dependencies": {
+    "happo.io": "^6.8.0"
+  }
+}
