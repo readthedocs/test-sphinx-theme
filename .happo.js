@@ -6,7 +6,7 @@ const url = 'https://readthedocs-static-dev.s3.us-east-2.amazonaws.com/qa/theme/
 module.exports = {
   project: 'test-sphinx-theme',
 
-  pages: [{ url: url, title: branch }],
+  pages: [{ url: url, title: "styleguide" }],
 
   targets: {
     'chrome-desktop': new RemoteBrowserTarget('chrome', {
