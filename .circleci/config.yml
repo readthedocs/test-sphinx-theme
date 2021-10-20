@@ -1,19 +1,21 @@
 version: 2.1
 
+orbs:
+  aws-s3: circleci/aws-s3@3.0
+
 commands:
   build_html:
     description: "Build HTML"
     steps:
       - run: pip install --user -r requirements.txt
       - run: sphinx-build -t html docs/ /tmp/html
-  sync_html:
-    description: "Sync HTML to S3"
-    steps:
       - run: find /tmp/html
+      - aws-s3/sync:
+          from: /tmp/html/
+          to: s3://readthedocs-static-dev/qa/theme/${CIRCLE_BRANCH}/
   run_happo:
     description: "Run Happo"
     steps:
-      - run: find /tmp/html
       - run: npm ci
       - run: npm run happo-ci-circleci
 
@@ -25,7 +27,6 @@ jobs:
     steps:
       - checkout
       - build_html
-      - sync_html
   happo:
     docker:
       - image: 'cimg/node:lts'
