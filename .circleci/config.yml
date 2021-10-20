@@ -4,7 +4,7 @@ commands:
   build_html:
     description: "Build HTML"
     steps:
-      - run: pip install --user -f requirements.txt
+      - run: pip install --user -r requirements.txt
       - run: sphinx-build -t html docs/ /tmp/html
   sync_html:
     description: "Sync HTML to S3"
