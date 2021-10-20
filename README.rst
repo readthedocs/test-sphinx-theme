@@ -16,14 +16,14 @@ difference between the two branches. You can view the difference by opening a PR
 to compare against a base branch, and `Happo`_ will create a report with the
 difference between the two outputs.
 
-Please, check `all the branches <https://github.com/readthedocs/test-builds/branches/>`_ and
-`all the tags <https://github.com/readthedocs/test-builds/tags/>`_ to be sure.
-
 Base scenarios
 ~~~~~~~~~~~~~~
 
 There are a few base scenarios that you can branch from and base a PR against.
 They represent a few of the supported configurations that we officially support.
+
+You can browse `all the branches <https://github.com/readthedocs/test-sphinx-theme/branches/>`_
+for a branch or tag to base your test case from.
 
 Adding a new scenario to the repository
 ---------------------------------------
