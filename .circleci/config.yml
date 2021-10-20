@@ -7,21 +7,15 @@ commands:
   build_html:
     description: "Build HTML"
     steps:
-      - run: pip install --user -r requirements.txt
-      - run: sphinx-build -t html docs/ /tmp/html
-      - run: find /tmp/html
+      - run: make install
+      - run: make build
       - aws-s3/sync:
           from: /tmp/html/
           to: s3://readthedocs-static-dev/qa/theme/${CIRCLE_BRANCH}/
   run_happo:
     description: "Run Happo"
     steps:
-      - run: npm ci
-      - run: npm run happo-ci-circleci
-      # Booo. CircleCI doesn't give us the base branch, so this is manual.
-      # If you are not branching from `main`, you'll need to edit this for now.
-      # BASE_BRANCH is used directly by Happo to compare builds.
-      # - run: BASE_BRANCH=sphinx3/docutils16 npm run happo-ci-circleci
+      - run: make diff
 
 jobs:
   build:
