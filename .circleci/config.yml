@@ -18,6 +18,10 @@ commands:
     steps:
       - run: npm ci
       - run: npm run happo-ci-circleci
+      # Booo. CircleCI doesn't give us the base branch, so this is manual.
+      # If you are not branching from `main`, you'll need to edit this for now.
+      # BASE_BRANCH is used directly by Happo to compare builds.
+      # - run: BASE_BRANCH=sphinx3/docutils16 npm run happo-ci-circleci
 
 jobs:
   build:
