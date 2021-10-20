@@ -1,0 +1,5 @@
+.ropeproject/
+.python-version
+.node-version
+_build/
+*.pyc
