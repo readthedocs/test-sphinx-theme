@@ -28,7 +28,7 @@ jobs:
       - sync_html
   happo:
     docker:
-      - image: 'cimg/node'
+      - image: 'cimg/node:lts'
     steps:
       - run_happo
 
