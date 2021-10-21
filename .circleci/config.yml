@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   aws-s3: circleci/aws-s3@3.0
+  browser-tools: circleci/browser-tools@1.2.3
 
 commands:
   build_html:
@@ -27,9 +28,10 @@ jobs:
       - build_html
   happo:
     docker:
-      - image: 'cimg/node:lts'
+      - image: 'cimg/node:lts-browser'
     steps:
       - checkout
+      - browser-tools/install-browser-tools
       - run_happo
 
 workflows:
