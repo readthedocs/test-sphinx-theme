@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  aws-s3: circleci/aws-s3@3.0
+#  aws-s3: circleci/aws-s3@3.0
   browser-tools: circleci/browser-tools@1.2.3
 
 commands:
@@ -10,9 +10,9 @@ commands:
     steps:
       - run: make install
       - run: make build
-      - aws-s3/sync:
-          from: /tmp/html/
-          to: s3://readthedocs-static-dev/qa/theme/${CIRCLE_BRANCH}/
+#      - aws-s3/sync:
+#          from: /tmp/html/
+#          to: s3://readthedocs-static-dev/qa/theme/${CIRCLE_BRANCH}/
   run_happo:
     description: "Run Happo"
     steps:
@@ -26,11 +26,15 @@ jobs:
     steps:
       - checkout
       - build_html
+      - persist_to_workspace:
+          root: /tmp/html
   happo:
     docker:
       - image: 'cimg/node:lts-browsers'
     steps:
       - checkout
+      - attach_workspace:
+          at: /tmp/html
       - browser-tools/install-browser-tools
       - run_happo
 

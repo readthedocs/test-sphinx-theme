@@ -2,7 +2,8 @@ const { RemoteBrowserTarget } = require('happo.io');
 const happoPluginScrape = require('happo-plugin-scrape');
 
 const branch = process.env.CIRCLE_BRANCH;
-const url = 'https://readthedocs-static-dev.s3.us-east-2.amazonaws.com/qa/theme/' + branch + '/index.html';
+//const url = 'https://readthedocs-static-dev.s3.us-east-2.amazonaws.com/qa/theme/' + branch + '/index.html';
+const url = 'file:///tmp/html/index.html';
 
 const examples = [
   { name: 'Inline markup', selector: 'section#inline-markup' },
