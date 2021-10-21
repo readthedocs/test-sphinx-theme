@@ -30,6 +30,7 @@ jobs:
       - build_html
       - persist_to_workspace:
           root: /tmp/html
+          paths: '*'
   happo:
     docker:
       - image: 'cimg/node:lts-browsers'
