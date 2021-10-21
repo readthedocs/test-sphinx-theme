@@ -3,7 +3,7 @@ const happoPluginScrape = require('happo-plugin-scrape');
 
 const branch = process.env.CIRCLE_BRANCH;
 //const url = 'https://readthedocs-static-dev.s3.us-east-2.amazonaws.com/qa/theme/' + branch + '/index.html';
-const url = 'http://127.0.0.1:8000/index.html';
+const url = 'http://127.0.0.1:10042/index.html';
 
 const examples = [
   { name: 'Inline markup', selector: 'section#inline-markup' },

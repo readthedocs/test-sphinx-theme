@@ -14,7 +14,7 @@ commands:
     steps:
       - run: find /tmp/html
       - run:
-          command: python3 -m http.server
+          command: python3 -m http.server 10042
           background: true
           working_directory: /tmp/html
       - run: sleep 10 && make diff
