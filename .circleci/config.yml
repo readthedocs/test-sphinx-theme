@@ -28,7 +28,7 @@ jobs:
       - build_html
   happo:
     docker:
-      - image: 'cimg/node:lts-browser'
+      - image: 'cimg/node:lts-browsers'
     steps:
       - checkout
       - browser-tools/install-browser-tools
