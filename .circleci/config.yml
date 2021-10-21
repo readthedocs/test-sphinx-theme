@@ -1,13 +1,7 @@
 version: 2.1
 
-#  aws-s3: circleci/aws-s3@3.0
-
 orbs:
   browser-tools: circleci/browser-tools@1.2.3
-
-#      - aws-s3/sync:
-#          from: /tmp/html/
-#          to: s3://readthedocs-static-dev/qa/theme/${CIRCLE_BRANCH}/
 
 commands:
   build_html:
@@ -23,7 +17,7 @@ commands:
           command: python3 -m http.server
           background: true
           working_directory: /tmp/html
-      - run: make diff
+      - run: sleep 10 && make diff
 
 jobs:
   build:
