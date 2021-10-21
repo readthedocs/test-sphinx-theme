@@ -19,6 +19,10 @@ commands:
     description: 'Run Happo'
     steps:
       - run: find /tmp/html
+      - run:
+          command: python3 -m http.server
+          background: true
+          working_directory: /tmp/html
       - run: make diff
 
 jobs:
