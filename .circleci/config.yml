@@ -1,26 +1,28 @@
 version: 2.1
 
-orbs:
 #  aws-s3: circleci/aws-s3@3.0
+
+orbs:
   browser-tools: circleci/browser-tools@1.2.3
 
-commands:
-  build_html:
-    description: "Build HTML"
-    steps:
-      - run: make install
-      - run: make build
 #      - aws-s3/sync:
 #          from: /tmp/html/
 #          to: s3://readthedocs-static-dev/qa/theme/${CIRCLE_BRANCH}/
+
+commands:
+  build_html:
+    description: 'Build HTML'
+    steps:
+      - run: make install
+      - run: make build
   run_happo:
-    description: "Run Happo"
+    description: 'Run Happo'
     steps:
       - run: make diff
 
 jobs:
   build:
-    description: "Build"
+    description: 'Build'
     docker:
       - image: 'cimg/python:3.9'
     steps:
