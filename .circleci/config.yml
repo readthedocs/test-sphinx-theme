@@ -18,6 +18,7 @@ commands:
   run_happo:
     description: 'Run Happo'
     steps:
+      - run: find /tmp/html
       - run: make diff
 
 jobs:
