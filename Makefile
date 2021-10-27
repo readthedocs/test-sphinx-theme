@@ -8,7 +8,7 @@ install:
 	pip install --user -r requirements.txt
 
 build:
-	sphinx-build -t html docs/ /tmp/html/
+	sphinx-build -t html docs/ docs/_build/html/
 
 diff:
 	npm ci

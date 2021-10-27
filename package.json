@@ -23,7 +23,7 @@
   "homepage": "https://github.com/readthedocs/test-sphinx-theme#readme",
   "dependencies": {
     "babel-loader": "^8.2.3",
-    "happo-plugin-scrape": "^1.2.5",
+    "happo-plugin-scrape": "github:agjohnson/happo-plugin-scrape#master",
     "happo.io": "^6.8.0",
     "webpack": "^4.46.0"
   }

@@ -12,12 +12,8 @@ commands:
   run_happo:
     description: 'Run Happo'
     steps:
-      - run: find /tmp/html
-      - run:
-          command: python3 -m http.server 10042
-          background: true
-          working_directory: /tmp/html
-      - run: sleep 10 && make diff
+      - run: find /home/circleci/projects/docs/_build/html/
+      - run: make diff
 
 jobs:
   build:
@@ -28,15 +24,15 @@ jobs:
       - checkout
       - build_html
       - persist_to_workspace:
-          root: /tmp/html
+          root: /home/circleci/project/docs/_build/
           paths: '*'
   happo:
     docker:
-      - image: 'cimg/node:lts-browsers'
+      - image: 'cimg/node:14.18-browsers'
     steps:
       - checkout
       - attach_workspace:
-          at: /tmp/html
+          at: /home/circleci/projects/docs/_build/
       - browser-tools/install-browser-tools
       - run_happo
 

@@ -1,12 +1,22 @@
 const { RemoteBrowserTarget } = require('happo.io');
 const happoPluginScrape = require('happo-plugin-scrape');
+const path = require('path');
 
 const branch = process.env.CIRCLE_BRANCH;
-//const url = 'https://readthedocs-static-dev.s3.us-east-2.amazonaws.com/qa/theme/' + branch + '/index.html';
-const url = 'http://127.0.0.1:10042/index.html';
+const url = 'file://' + path.join(__dirname, 'docs', '_build', 'html', 'index.html');
 
 const examples = [
-  { name: 'Inline markup', selector: 'section#inline-markup' },
+  /*
+  { name: 'Inline markup', selector: '#inline-markup' },
+  { name: 'Math', selector: '#math' },
+  { name: 'Literal blocks', selector: '#literal-blocks' },
+  { name: 'Line blocks', selector: '#line-blocks' },
+  { name: 'Block quotes', selector: '#block-quotes' },
+  { name: 'Doctest blocks', selector: '#doctest-blocks' },
+  { name: 'Code blocks', selector: '#code-blocks' },
+  { name: 'Sidebar', selector: '#sidebar' },
+  */
+  { name: 'Body', selector: '.wy-grid-for-nav' },
 ];
 
 module.exports = {
