@@ -1,1 +1,9 @@
-{}
+{
+  "fixturesFolder": "tests/config/fixtures",
+  "integrationFolder": "tests/specs",
+  "pluginsFile": "tests/config/plugins/index.js",
+  "screenshotsFolder": "tests/config/screenshots",
+  "videosFolder": "tests/config/videos",
+  "downloadsFolder": "tests/config/downloads",
+  "supportFile": "tests/config/support/index.js"
+}
