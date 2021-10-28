@@ -9,10 +9,3 @@ install:
 
 build:
 	sphinx-build -t html docs/ docs/_build/html/
-
-diff:
-	npm ci
-	npm run happo-ci-circleci
-	# Or if you need to test against a different base, you have to manually
-	# specify that here:
-	# BASE_BRANCH=sphinx3/docutils16 npm run happo-ci-circleci
