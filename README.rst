@@ -4,9 +4,6 @@ Test Sphinx Theme
 This repository is used internally to create different scenarios
 to perform visual difference testing on `sphinx_rtd_theme`_.
 
-Each branch should represent a single test case and should explain on it's
-purpose in ``docs/index.rst``.
-
 Scenarios
 ---------
 
@@ -30,7 +27,6 @@ Adding a new scenario to the repository
 
 #. Create a new branch from one of the base scenario branches, using an
    appropiate name for your new test case
-#. Explain the test case in your branch's ``docs/index.rst`` file
 #. Add or modify the necessary files, such as installing different dependencies
 #. Push your changes and open a pull request
 #. Wait for `Happo`_ to generate a comparison between your new branch and the
