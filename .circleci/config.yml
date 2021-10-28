@@ -17,28 +17,23 @@ jobs:
     docker:
       - image: 'cimg/python:3.9'
     steps:
-      - checkout
+      - attach_workspace:
+          at: ~/
       - build_html
       - persist_to_workspace:
-          root: /home/circleci/project/docs/_build/
-          paths: '*'
-  happo:
-    docker:
-      - image: 'cimg/node:14.18-browsers'
-    steps:
-      - checkout
-      - attach_workspace:
-          at: /home/circleci/projects/docs/_build/
-      - browser-tools/install-browser-tools
+          root: ~/
+          paths:
+            - project
+
+workflows:
+  test:
+    jobs:
+      - cypress/install
+      - build:
+          requires: cypress/install
       - cypress/run:
           name: Run Cypress with Happo
           command-prefix: 'npx happo-cypress -- npx'
-
-workflows:
-  version: 2
-  tests:
-    jobs:
-      - build
-      - happo:
+          attach-workspace: true
           requires:
             - build
