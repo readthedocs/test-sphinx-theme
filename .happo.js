@@ -9,5 +9,13 @@ module.exports = {
       viewport: '1024x768',
       maxHeight: 3000,
     }),
+    'firefox-desktop': new RemoteBrowserTarget('firefox', {
+      viewport: '1024x768',
+      maxHeight: 3000,
+    }),
+    'firefox-mobile': new RemoteBrowserTarget('firefox', {
+      viewport: '320x640',
+      maxHeight: 3000,
+    }),
   },
 };
