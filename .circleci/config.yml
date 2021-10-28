@@ -30,7 +30,9 @@ workflows:
     jobs:
       - cypress/install
       - build:
-          requires: cypress/install
+          name: Build with Sphinx
+          requires:
+            - cypress/install
       - cypress/run:
           name: Run Cypress with Happo
           command-prefix: 'npx happo-cypress -- npx'
