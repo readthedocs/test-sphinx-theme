@@ -1,4 +1,4 @@
-.PHONY: install build diff
+.PHONY: install build
 
 install:
 	# Edit this to manually install dependencies if you are testing conflicting
