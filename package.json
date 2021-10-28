@@ -7,9 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "happo": "happo",
-    "happo-ci-circleci": "happo-ci-circleci"
+    "happo-ci-circleci": "happo-ci-circleci",
+    "test": "npx happo-cypress -- npx cypress run",
+    "open": "HAPPO_ENABLED=true npx cypress open"
   },
   "repository": {
     "type": "git",
@@ -23,8 +24,8 @@
   "homepage": "https://github.com/readthedocs/test-sphinx-theme#readme",
   "dependencies": {
     "babel-loader": "^8.2.3",
-    "happo-plugin-scrape": "github:agjohnson/happo-plugin-scrape#master",
-    "happo.io": "^6.8.0",
-    "webpack": "^4.46.0"
+    "cypress": "^8.7.0",
+    "happo-cypress": "^1.24.0",
+    "happo.io": "^6.8.0"
   }
 }
