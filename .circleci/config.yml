@@ -30,7 +30,6 @@ workflows:
     jobs:
       - cypress/install
       - build:
-          name: Build with Sphinx
           requires:
             - cypress/install
       - cypress/run:
