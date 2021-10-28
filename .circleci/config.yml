@@ -31,8 +31,8 @@ jobs:
           at: /home/circleci/projects/docs/_build/
       - browser-tools/install-browser-tools
       - cypress/run:
-        name: Run Cypress with Happo
-        command-prefix: 'npx happo-cypress -- npx'
+          name: Run Cypress with Happo
+          command-prefix: 'npx happo-cypress -- npx'
 
 workflows:
   version: 2
