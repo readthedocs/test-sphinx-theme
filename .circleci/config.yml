@@ -33,7 +33,6 @@ workflows:
           requires:
             - cypress/install
       - cypress/run:
-          name: Run Cypress with Happo
           command-prefix: 'npx happo-cypress -- npx'
           attach-workspace: true
           requires:
